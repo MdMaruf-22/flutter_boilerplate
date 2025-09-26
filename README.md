@@ -13,11 +13,24 @@ This is a boilerplate repo with a reusable folder structure for Flutter apps usi
 
 2. Replace **APP_NAME** with your actual project name.
 
-3.Run:
+3. Run:
 
-    ```bash
-    flutter create .
-    flutter pub get
-    ```
+   ```bash
+   flutter create .
+   flutter pub get
+   ```
 
-4.Done.
+4. Done.
+
+## Features
+
+- ✨ Clean and organized folder structure
+- 🔄 GetX state management integration
+- 📱 Ready-to-use Flutter boilerplate
+- 🚀 Quick setup and configuration
+
+## Requirements
+
+- Flutter SDK
+- Dart SDK
+- Git
