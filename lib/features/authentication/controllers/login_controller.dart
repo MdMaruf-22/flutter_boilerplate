@@ -1,4 +1,3 @@
-import 'package:course_online/features/authentication/data/models/profile_model_class.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -16,8 +15,11 @@ class CategoryController extends GetxController {
 
   // Fetch categories from the API
   Future<void> fetchCategories() async {
-    final response = await http.get(Uri.parse(
-        'https://starrd-app.vercel.app/api/v1/categories/get-categories'));
+    final response = await http.get(
+      Uri.parse(
+        'https://starrd-app.vercel.app/api/v1/categories/get-categories',
+      ),
+    );
 
     if (response.statusCode == 200) {
       final jsonData = json.decode(response.body);
@@ -31,13 +33,15 @@ class CategoryController extends GetxController {
   // Function to add a new category
   void addCategory() {
     if (categoryController.text.isNotEmpty) {
-      categories.add(Data(
-        id: DateTime.now().millisecondsSinceEpoch.toString(),
-        categoryName: categoryController.text,
-        userId: userId,
-        createdAt: DateTime.now().toIso8601String(),
-        updatedAt: DateTime.now().toIso8601String(),
-      ));
+      categories.add(
+        Data(
+          id: DateTime.now().millisecondsSinceEpoch.toString(),
+          categoryName: categoryController.text,
+          userId: userId,
+          createdAt: DateTime.now().toIso8601String(),
+          updatedAt: DateTime.now().toIso8601String(),
+        ),
+      );
     }
   }
 }
