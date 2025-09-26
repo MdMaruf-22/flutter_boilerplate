@@ -1,0 +1,11 @@
+name: __APP_NAME__
+description: Base GetX boilerplate project
+publish_to: "none"
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^4.6.6
