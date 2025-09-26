@@ -46,7 +46,7 @@ This boilerplate was created to:
 
 ### 1. Create a New Project from the Template
 
-1. Go to the [boilerplate GitHub repo](https://github.com/YOUR_USERNAME/flutter_boilerplate)
+1. Go to the [boilerplate GitHub repo](https://github.com/MdMaruf-22/flutter_boilerplate)
 2. Click **Use this template → Create a new repository**
 3. Provide a **repository name** (e.g., `shop_app`)
 4. Choose Public or Private
