@@ -57,7 +57,7 @@ This boilerplate was created to:
 ### 2. Clone the Repository Locally
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/shop_app.git
+git clone https://github.com/MdMaruf-22/flutter_boilerplate.git
 cd shop_app
 ```
 
