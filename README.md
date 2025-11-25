@@ -90,6 +90,24 @@ The script will automatically:
 - Update Android package ID → `com.clientname.projectname`
 - Update iOS bundle ID → `com.clientname.projectname`
 - Run `flutter pub get`
+### 4. Create you flutter project 
+
+```bash
+flutter create .
+```
+### 5. Copy this package name into your newly created pubsec.yaml
+
+  ```bash
+  http: ^1.5.0
+  logger: ^2.6.1
+  url_launcher: ^6.3.2
+  flutter_screenutil: ^5.9.3
+  google_fonts: ^6.3.1
+  shared_preferences: ^2.5.3
+  get: ^4.7.2
+  web_socket_channel: ^3.0.3
+  intl: ^0.20.2
+```
 
 ### 4. Run Your Flutter App
 
