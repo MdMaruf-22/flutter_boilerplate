@@ -134,33 +134,37 @@ class NetworkCaller {
   }
 
   Future<ResponseData> multipartRequest(
-    String url, {
-    Map<String, String>? fields,
-    Map<String, String>? headers,
-    List<http.MultipartFile>? files,
-    String? token,
-  }) async {
-    Uri uri = Uri.parse(url);
-    Map<String, String> requestHeaders = {
-      if (token != null) 'Authorization': token,
-      if (headers != null) ...headers,
-    };
+  String url, {
+  required String method, // "POST", "PATCH", "PUT"
+  Map<String, String>? fields,
+  Map<String, String>? headers,
+  List<http.MultipartFile>? files,
+  String? token,
+}) async {
+  Uri uri = Uri.parse(url);
+  Map<String, String> requestHeaders = {
+    if (token != null) 'Authorization': token,
+    if (headers != null) ...headers,
+  };
 
-    try {
-      var request = http.MultipartRequest('POST', uri);
-      request.headers.addAll(requestHeaders);
-      if (fields != null) request.fields.addAll(fields);
-      if (files != null) request.files.addAll(files);
+  try {
+    var request = http.MultipartRequest(method.toUpperCase(), uri);
+    request.headers.addAll(requestHeaders);
 
-      final streamedResponse = await request.send().timeout(
-        Duration(seconds: timeoutDuration),
-      );
-      final response = await Response.fromStream(streamedResponse);
-      return _handleResponse(response);
-    } catch (e) {
-      return _handleError(e);
-    }
+    if (fields != null) request.fields.addAll(fields);
+    if (files != null) request.files.addAll(files);
+
+    final streamedResponse = await request.send()
+        .timeout(Duration(seconds: timeoutDuration));
+
+    final response = await Response.fromStream(streamedResponse);
+
+    return _handleResponse(response);
+  } catch (e) {
+    return _handleError(e);
   }
+}
+
 
   ResponseData _handleResponse(Response response) {
     AppLoggerHelper.debug('Status: ${response.statusCode}');
