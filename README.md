@@ -109,7 +109,7 @@ flutter create .
   intl: ^0.20.2
 ```
 
-### 4. Run Your Flutter App
+### 6. Run Your Flutter App
 
 ```bash
 flutter run
