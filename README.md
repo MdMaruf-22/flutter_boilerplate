@@ -141,15 +141,6 @@ lib/
 
 ---
 
-## 🔹 Recommended Workflow
-
-1. Create new repo from template on GitHub
-2. Clone locally
-3. Run setup script (`setup.sh` or `setup.ps1`)
-4. Run `flutter run` to verify project works
-5. Start building features in `feature/` folder, following the GetX architecture
-
----
 
 ## 🔹 Notes
 
